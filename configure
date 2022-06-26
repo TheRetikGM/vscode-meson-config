@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #######################################################################
-# NEED to set these env:
+# NEED to set these env variables:
 #	MESON_SOURCE_ROOT -- path to root directory of meson project
 #	EXENAME		  -- name of the built executable
 #	BUILD_MACHINE_SYS -- Operating System of the build machine 
@@ -60,5 +60,8 @@ do
 		mv "$vscode_dir/$json_filename.tmp" $vscode_dir/$json_filename
 	fi
 done
+
+# Copy all regular JSON configurations
+cp $files/*.json $vscode_dir/
 
 exit 0

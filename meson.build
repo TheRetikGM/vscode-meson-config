@@ -3,7 +3,7 @@ project('Meson vscode configuration generator',
 
 exename = 'main'
 
-run_command(files('configure'),
+run_command('bash', 'configure',
   env : {'EXENAME' : exename,
          'BUILD_MACHINE_SYS' : build_machine.system()},
   check : true)

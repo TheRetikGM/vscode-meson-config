@@ -14,9 +14,20 @@ then
 	exit 1;
 fi
 
+# Replace backwards slashes with forward slashes
+if [[ $BUILD_MACHINE_SYS == "windows" ]]
+then
+	MESON_SOURCE_ROOT=$(echo $MESON_SOURCE_ROOT | tr '\\' '/')
+	MESON_BUILD_ROOT=$(echo $MESON_BUILD_ROOT | tr '\\' '/')
+fi
+
+echo "Meson source root = $MESON_SOURCE_ROOT"
+echo "Exename = $EXENAME"
+echo "System = $BUILD_MACHINE_SYS"
+
 if [[ $BUILD_MACHINE_SYS == windows ]]
 then
-	echo "TODO"
+	files="$(dirname ${BASH_SOURCE[0]})/win"
 else
 	files="$(dirname ${BASH_SOURCE[0]})/linux"
 fi

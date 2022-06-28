@@ -21,9 +21,6 @@ then
 	MESON_BUILD_ROOT=$(echo $MESON_BUILD_ROOT | tr '\\' '/')
 fi
 
-echo "Meson source root = $MESON_SOURCE_ROOT"
-echo "Exename = $EXENAME"
-echo "System = $BUILD_MACHINE_SYS"
 
 if [[ $BUILD_MACHINE_SYS == windows ]]
 then

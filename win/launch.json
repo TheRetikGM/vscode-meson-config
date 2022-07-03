@@ -9,7 +9,8 @@
             "stopAtEntry": false,
             "cwd": "${config:builddir}",
             "environment": [],
-            "console": "externalTerminal"
+            "console": "externalTerminal",
+            "preLaunchTask": "Ren: Build"
         }
     ],
     "version": "2.0.0"

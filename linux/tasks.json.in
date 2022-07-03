@@ -2,11 +2,44 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "Meson: Build & Run",
+			"label": "Ren: Build",
+			"command": "meson",
+			"args": [ "compile" ],
+			"options": { "cwd": "${config:builddir}" },
+			"problemMatcher": [],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		},
+		{
+			"label": "Ren: Clean",
+			"command": "meson",
+			"args": [ "compile", "--clean" ],
+			"options": { "cwd": "${config:builddir}" },
+			"problemMatcher": []
+		},
+		{
+			"label": "Ren: Clean & Build",
 			"dependsOrder": "sequence",
 			"dependsOn": [
-				"Meson: Build all targets",
-				"Meson: Run src/@exename@"
+				"Ren: Clean",
+				"Ren: Build"
+			],
+			"problemMatcher": []
+		},
+		{
+			"label": "Ren: Run",
+			"command": "src/main",
+			"options": { "cwd": "${config:builddir}" },
+			"problemMatcher": []
+		},
+		{
+			"label": "Ren: Build & Run",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"Ren: Build",
+				"Ren: Run"
 			],
 			"problemMatcher": []
 		}

@@ -1,5 +1,6 @@
 {
     "mesonbuild.configureOnOpen": true,
     "exename": "@exename@",
-    "builddir": "@builddir@"
+    "builddir": "@builddir@",
+    "search.useIgnoreFiles": false
 }
